@@ -90,7 +90,7 @@ body.dark-mode #new-task {
   input[type="text"]:focus {
     color: #212121;
   }
-
+  
   /* New Task */
   label[for='new-task'] {
     display: block;
