@@ -139,8 +139,33 @@ var saveTasks=function() {
 // Add event listener to toggle button
 toggleButton.addEventListener("click", function() {
   // Toggle dark mode
-  document.body.classList.toggle("dark-mode");
+  var currentMode = toggleButton.dataset.mode;
+  if (currentMode === "light") {
+    toggleButton.dataset.mode = "dark";
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("mode", "dark");
+  } else {
+    toggleButton.dataset.mode = "light";
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("mode", "light");
+  }
 });
+
+window.addEventListener("load", function() {
+  // Load dark mode setting
+  var currentMode = localStorage.getItem("mode");
+  if (currentMode === "dark") {
+    toggleButton.dataset.mode = "dark";
+    document.body.classList.add("dark-mode");
+  } else {
+    toggleButton.dataset.mode = "light";
+    document.body.classList.remove("dark-mode");
+  }
+  // Load tasks
+  loadTasks();
+});
+
+
 
 for (var i=0; i<incompleteTaskHolder.children.length;i++){
     bindTaskEvents(incompleteTaskHolder.children[i],taskCompleted);
