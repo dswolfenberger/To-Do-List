@@ -2,6 +2,7 @@ var taskInput=document.getElementById("new-task");
 var addButton=document.getElementsByTagName("button")[0];
 var incompleteTaskHolder=document.getElementById("incomplete-tasks");
 var completedTasksHolder=document.getElementById("completed-tasks");
+var toggleButton=document.getElementById("toggle-button");
 
 var createNewTaskElement=function(taskString){
 
@@ -134,6 +135,13 @@ var saveTasks=function() {
   });
   window.addEventListener("load", loadTasks);
   
+//Dark mode toggle - code by Devin Wolfenberger - https://github.com/dswolfenberger
+// Add event listener to toggle button
+toggleButton.addEventListener("click", function() {
+  // Toggle dark mode
+  document.body.classList.toggle("dark-mode");
+});
+
 for (var i=0; i<incompleteTaskHolder.children.length;i++){
     bindTaskEvents(incompleteTaskHolder.children[i],taskCompleted);
 }
