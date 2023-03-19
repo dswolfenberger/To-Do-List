@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="script.js"></script>
+
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="container">
+      <p>
+        <label for="new-task">Add Item</label>
+        <input id="new-task" type="text">
+        <button>Add</button>
+      </p>
+      <h3>Todo</h3>
+      <ul id="incomplete-tasks">
+        
+      </ul>
+      <h3>Completed</h3>
+      <ul id="completed-tasks">
+        <li>
+          <input type="checkbox" checked>
+           <label>See the Doctor</label>
+          <input type="text">
+          <button class="edit">Edit</button>
+          <button class="delete">Delete</button>
+        </li>
+      </ul>
+    </div> 
+
+    <script type="text/javascript" src="app.js"></script>
+
+  </body>
+</html>
